@@ -1,0 +1,95 @@
+*.dll
+*.exe
+*.app
+*.o
+*.dSYM
+.idea/
+[Bb]uilds/
+[Bb]uild/
+cmake-build-debug/
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+
+# Ignore everything that is created by running autoreconf, configure.ac or make.
+
+# No leading slash means ignore these FILES no matter in which directory they
+# appear. Yes, we ignore Makefiles and 'configure' scripts because they are all
+# generated for us!
+*.exe
+*.o
+Makefile
+Makefile.in
+TAGS
+aclocal.m4
+compile
+config.h
+config.h.in
+config.log
+config.status
+configure
+depcomp
+install-sh
+missing
+stamp-h1
+tags
+test-driver
+
+# Ditto, but trailing slash means this is a DIRECTORY.
+.deps/
+autom4te.cache/
+
+# A leading slash means "relative to the root only".
+/debug/
+!/debug/debugconfigure
+/tests/*.log
+/tests/*.trs

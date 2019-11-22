@@ -342,7 +342,7 @@ Network::backprop()
 				(*grad.a[i-1])[k][0] = 0.0;
 				for(int j = 0; j < layerSizeArray[i]; j++)
 				{
-					(*grad.a[i-1])[k][0] += (*grad.b[i])[j][0] * (*w[i])[j][k];
+					(*grad.a[i-1])[k][0] = (*grad.b[i])[j][0] * (*w[i])[j][k];
 				}
 			}
 		}

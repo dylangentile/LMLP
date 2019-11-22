@@ -24,7 +24,7 @@ int main(int argc, char const *argv[])
 
 	printNetwork(&myNetwork);
 
-	runNetwork(&myNetwork, 100001, 0.25, 4, 4);
+	runNetwork(&myNetwork, 16, 0.75, 4, 1);
 	printNetwork(&myNetwork);
 
 

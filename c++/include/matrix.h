@@ -4,6 +4,7 @@ class Matrix
 {
 public:
 	Matrix(unsigned m, unsigned n, double(*f)(void) = nullptr);
+	Matrix(const Matrix &i_matrix);
 	~Matrix();
 	unsigned w(){ return j; }
 	unsigned z(){ return k; }

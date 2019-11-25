@@ -36,43 +36,22 @@ Matrix::Matrix(unsigned m, unsigned n, double(*f)(void))
 }
 
 Matrix::Matrix(const Matrix &i_matrix)
-
 {
-
 	j = i_matrix.j;
-
 	k = i_matrix.k;
 
-
-
 	array = new double*[j];
-
 	for (unsigned i = 0; i < j; i++)
-
 		array[i] = new double[k];
 
 
-
-
-
 	for (unsigned x = 0; x < this->j; x++)
-
 	{
-
 		for (unsigned y = 0; y < this->k; y++)
-
 		{
-
 			this->array[x][y] = i_matrix.array[x][y];
-
 		}
-
 	}
-
-
-
-
-
 }
 
 

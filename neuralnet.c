@@ -237,6 +237,36 @@ void printResults(Network* theNet, int aeon)
 	printf("\nAeon %d:\nf(%4.3f, %4.3f) = %4.3f\n", aeon, theNet->a0[0], theNet->a0[1], theNet->a2[0]);
 }
 
+void printFinal(Network* theNet)
+{
+	theNet->a0[0] = 0.0;
+	theNet->a0[1] = 0.0;
+	theNet->y = 0.0;
+	feedforward(theNet);
+	printf("FINAL RESULTS:\nf(%4.3f, %4.3f) = %4.3f\n",  theNet->a0[0], theNet->a0[1], theNet->a2[0]);
+
+	theNet->a0[0] = 1.0;
+	theNet->a0[1] = 0.0;
+	theNet->y = 1.0;
+	feedforward(theNet);
+	printf("f(%4.3f, %4.3f) = %4.3f\n", theNet->a0[0], theNet->a0[1], theNet->a2[0]);
+
+	theNet->a0[0] = 0.0;
+	theNet->a0[1] = 1.0;
+	theNet->y = 1.0;
+	feedforward(theNet);
+	printf("f(%4.3f, %4.3f) = %4.3f\n", theNet->a0[0], theNet->a0[1], theNet->a2[0]);
+
+	theNet->a0[0] = 1.0;
+	theNet->a0[1] = 1.0;
+	theNet->y = 0.0;
+	feedforward(theNet);
+	printf("f(%4.3f, %4.3f) = %4.3f\n", theNet->a0[0], theNet->a0[1], theNet->a2[0]);
+
+
+
+}
+
 
 void exportNetwork()
 {
@@ -285,6 +315,9 @@ int main(int argc, char const *argv[])
 
 
 	printNetwork(&myNet);
+	printf("\n\n");
+	printFinal(&myNet);
+	
 
 
 	

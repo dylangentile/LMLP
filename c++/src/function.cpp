@@ -1,8 +1,22 @@
 #include "function.h"
+#if defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))
+#define UNIX_SYSTEM
+#endif
+#if defined(_WIN32) || defined(WIN32)
+#define WIN_SYSTEM
+#endif
+
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
+#ifdef UNIX_SYSTEM
 #include <unistd.h>
+#endif
+
+#ifdef WIN_SYSTEM
+#include <process.h>
+#endif
+
 
 
 unsigned long mix(unsigned long a, unsigned long b, unsigned long c)
@@ -41,7 +55,12 @@ public:
 void seedGenerator()
 {
 	//srand(5);
+#ifdef UNIX_SYSTEM
 	srand(mix(clock(), time(NULL), getpid()));
+#endif
+#ifdef WIN_SYSTEM
+	srand(mix(time(NULL), clock(), _getpid()));
+#endif
 }
 
 double sigmoid(double x)
